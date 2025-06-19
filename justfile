@@ -1,5 +1,5 @@
 default:
-    @ which cargo-asm > /dev/null || { echo "\`cargo-show-asm\` must be installed to run these tests: https://crates.io/crates/cargo-show-asm"; exit 1; }
+    @ cargo asm -V > /dev/null 2> /dev/null || { echo "\`cargo-show-asm\` must be installed to run these tests: https://crates.io/crates/cargo-show-asm"; exit 1; }
     @ echo "Is the alignment statically known in the \`allocate\` method?"
     @ just check vec_with_capacity
     @ just check vec_push
