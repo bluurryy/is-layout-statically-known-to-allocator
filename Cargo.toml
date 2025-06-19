@@ -1,0 +1,6 @@
+[package]
+name = "is-layout-statically-known-to-allocator"
+edition = "2024"
+
+[dependencies]
+hashbrown = { version = "0.15.4", features = ["nightly"] }
