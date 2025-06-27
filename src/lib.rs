@@ -19,8 +19,7 @@ unsafe impl Allocator for TestAllocator {
     #[inline(always)]
     fn allocate(&self, layout: Layout) -> Result<NonNull<[u8]>, AllocError> {
         // The alignment is never 1024 in our cases, so if this function call shows up
-        // in the assembly. That means that the layout's alignment is not statically
-        // known.
+        // in the assembly then the layout's alignment is not statically known.
         if layout.align() == 1024 {
             DOES_NOT_INLINE_ALLOCATE_FUNCTION();
         }
